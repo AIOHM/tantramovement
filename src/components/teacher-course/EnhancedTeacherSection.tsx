@@ -225,7 +225,7 @@ const EnhancedTeacherSection: React.FC = () => {
                   className="relative mt-6 p-4 md:p-5 rounded-xl border border-[#592C66]/20"
                   style={{
                     background: 'linear-gradient(135deg, rgba(89,44,102,0.05), rgba(216,168,151,0.08))',
-                  }}},{
+                  }}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
