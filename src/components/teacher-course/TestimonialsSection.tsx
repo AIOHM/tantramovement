@@ -44,17 +44,17 @@ const TestimonialsSection = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <motion.span 
-          className="inline-block px-4 py-1.5 rounded-full text-xs font-display tracking-widest uppercase bg-secondary/20 text-secondary mb-4"
+          className="inline-block px-4 py-1.5 rounded-full text-xs font-display tracking-widest uppercase bg-[#D8A897]/20 text-[#D8A897] mb-4"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           Graduate Stories
         </motion.span>
-        <h3 className="text-3xl md:text-4xl font-display font-bold text-accent mb-3">
+        <h3 className="text-3xl md:text-4xl font-display font-bold text-[#592C66] mb-3">
           Transformations That Speak
         </h3>
-        <p className="text-accent max-w-xl mx-auto">
+        <p className="text-white/70 max-w-xl mx-auto">
           Hear from those who have walked this sacred path before you
         </p>
       </div>
@@ -72,23 +72,23 @@ const TestimonialsSection = () => {
             whileHover={{ y: -4 }}
           >
             {/* Quote icon */}
-            <Quote className="absolute top-4 right-4 h-8 w-8 text-accent/30" />
+            <Quote className="absolute top-4 right-4 h-8 w-8 text-[#592C66]/30" />
             
             {/* Stars */}
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                <Star key={i} className="h-4 w-4 fill-[#D8A897] text-[#D8A897]" />
               ))}
             </div>
             
             {/* Quote */}
-            <p className="text-accent text-sm leading-relaxed mb-6 italic">
+            <p className="text-[#592C66] text-sm leading-relaxed mb-6 italic">
               "{testimonial.quote}"
             </p>
             
             {/* Author */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-accent/30">
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#592C66]/30">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
@@ -96,8 +96,8 @@ const TestimonialsSection = () => {
                 />
               </div>
               <div>
-                <h4 className="font-medium text-accent">{testimonial.name}</h4>
-                <p className="text-xs text-accent/80">{testimonial.location} • {testimonial.role}</p>
+                <h4 className="font-medium text-[#592C66]">{testimonial.name}</h4>
+                <p className="text-xs text-[#D8A897]/80">{testimonial.location} • {testimonial.role}</p>
               </div>
             </div>
           </motion.div>
@@ -113,16 +113,16 @@ const TestimonialsSection = () => {
         transition={{ delay: 0.3 }}
       >
         <div className="text-center">
-          <span className="text-3xl font-display font-bold text-primary">500+</span>
-          <p className="text-sm text-foreground/60">Graduates</p>
+          <span className="text-3xl font-display font-bold text-[#592C66]">500+</span>
+          <p className="text-sm text-white/60">Graduates</p>
         </div>
         <div className="text-center border-x border-border/30">
-          <span className="text-3xl font-display font-bold text-secondary">14+</span>
-          <p className="text-sm text-foreground/60">Years Teaching</p>
+          <span className="text-3xl font-display font-bold text-[#D8A897]">14+</span>
+          <p className="text-sm text-white/60">Years Teaching</p>
         </div>
         <div className="text-center">
-          <span className="text-3xl font-display font-bold text-accent-foreground">40+</span>
-          <p className="text-sm text-foreground/60">Countries</p>
+          <span className="text-3xl font-display font-bold text-white">40+</span>
+          <p className="text-sm text-white/60">Countries</p>
         </div>
       </motion.div>
     </motion.div>

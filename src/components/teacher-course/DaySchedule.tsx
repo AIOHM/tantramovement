@@ -37,10 +37,10 @@ const iconMap = {
 };
 
 const periodColors = {
-  morning: { bg: 'from-amber-500/10 to-orange-400/5', border: 'border-amber-400/30', text: 'text-amber-600' },
-  midday: { bg: 'from-yellow-500/10 to-amber-400/5', border: 'border-yellow-400/30', text: 'text-yellow-600' },
-  afternoon: { bg: 'from-orange-500/10 to-rose-400/5', border: 'border-orange-400/30', text: 'text-orange-600' },
-  evening: { bg: 'from-purple-500/10 to-indigo-400/5', border: 'border-purple-400/30', text: 'text-purple-600' },
+  morning: { bg: 'from-[#592C66]/10 to-[#D8A897]/10', border: 'border-[#592C66]/30', text: 'text-[#592C66]' },
+  midday: { bg: 'from-[#592C66]/10 to-[#D8A897]/10', border: 'border-[#592C66]/30', text: 'text-[#592C66]' },
+  afternoon: { bg: 'from-[#592C66]/10 to-[#D8A897]/10', border: 'border-[#592C66]/30', text: 'text-[#592C66]' },
+  evening: { bg: 'from-[#592C66]/10 to-[#D8A897]/10', border: 'border-[#592C66]/30', text: 'text-[#592C66]' },
 };
 
 const DaySchedule: React.FC = () => {
@@ -98,11 +98,11 @@ const DaySchedule: React.FC = () => {
           >
             <div className="flex flex-col items-center">
               <motion.div
-                className="p-2 rounded-full bg-background/80 backdrop-blur-sm border border-accent/20"
+                className="p-2 rounded-full bg-background/80 backdrop-blur-sm border border-[#592C66]/20"
                 animate={{ y: [0, -3, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: i * 0.3 }}
               >
-                <item.icon size={20} className="text-secondary" />
+                <item.icon size={20} className="text-[#592C66]" />
               </motion.div>
               <span className="text-xs mt-1 text-foreground/60 font-display">{item.label}</span>
             </div>
@@ -169,7 +169,7 @@ const DaySchedule: React.FC = () => {
               <motion.div
                 className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  background: `linear-gradient(90deg, transparent, hsl(var(--secondary) / 0.5), transparent)`,
+                  background: 'linear-gradient(90deg, transparent, rgba(89,44,102,0.5), transparent)',
                 }}
               />
             </motion.div>
@@ -194,19 +194,19 @@ const DaySchedule: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <div className="w-12 h-px bg-gradient-to-r from-transparent to-secondary/50" />
-            <Sparkles size={16} className="text-secondary" />
-            <div className="w-12 h-px bg-gradient-to-l from-transparent to-secondary/50" />
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#592C66]/50" />
+            <Sparkles size={16} className="text-[#592C66]" />
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#592C66]/50" />
           </motion.div>
         </div>
 
         <div
-          className="p-6 md:p-8 rounded-xl border border-accent/20 backdrop-blur-sm"
+          className="p-6 md:p-8 rounded-xl border border-[#592C66]/20 backdrop-blur-sm"
           style={{
-            background: 'linear-gradient(135deg, hsl(var(--accent) / 0.08), hsl(var(--secondary) / 0.05))',
+            background: 'linear-gradient(135deg, rgba(89,44,102,0.08), rgba(216,168,151,0.05))',
           }}
         >
-          <h4 className="text-xl font-display font-medium text-primary mb-5 text-center">
+          <h4 className="text-xl font-display font-medium text-[#592C66] mb-5 text-center">
             Important Notes
           </h4>
           
@@ -214,18 +214,18 @@ const DaySchedule: React.FC = () => {
             {scheduleNotes.map((note, i) => (
               <motion.div
                 key={i}
-                className="flex items-start gap-3 p-3 rounded-lg bg-background/30 border border-accent/10"
+                className="flex items-start gap-3 p-3 rounded-lg bg-background/30 border border-[#592C66]/10"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.8 + i * 0.1 }}
-                whileHover={{ x: 4, borderColor: 'hsl(var(--accent) / 0.3)' }}
+                whileHover={{ x: 4, borderColor: 'rgba(89,44,102,0.3)' }}
               >
                 <motion.div
-                  className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5"
-                  whileHover={{ scale: 1.1, backgroundColor: 'hsl(var(--secondary) / 0.3)' }}
+                  className="w-6 h-6 rounded-full bg-[#592C66]/20 flex items-center justify-center flex-shrink-0 mt-0.5"
+                  whileHover={{ scale: 1.1, backgroundColor: 'rgba(89,44,102,0.3)' }}
                 >
-                  <span className="text-xs font-medium text-secondary">{i + 1}</span>
+                  <span className="text-xs font-medium text-[#592C66]">{i + 1}</span>
                 </motion.div>
                 <span className="text-foreground/70 leading-relaxed">{note}</span>
               </motion.div>

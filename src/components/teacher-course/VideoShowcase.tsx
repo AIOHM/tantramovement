@@ -26,10 +26,10 @@ const VideoShowcase = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#592C66]/10 border border-[#592C66]/20 mb-4"
         >
-          <Film className="w-4 h-4 text-primary" />
-          <span className="text-sm font-display text-primary">Documentary Film</span>
+          <Film className="w-4 h-4 text-[#592C66]" />
+          <span className="text-sm font-display text-[#592C66]">Documentary Film</span>
         </motion.div>
         
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-foreground mb-3">
@@ -47,16 +47,16 @@ const VideoShowcase = () => {
       <motion.div 
         className="relative rounded-2xl overflow-hidden mb-8 group"
         style={{
-          boxShadow: '0 25px 80px -20px hsl(var(--primary) / 0.25)',
+          boxShadow: '0 25px 80px -20px rgba(89,44,102,0.25)',
         }}
         whileHover={{ scale: 1.005 }}
         transition={{ duration: 0.4 }}
       >
         {/* Decorative frame corners */}
-        <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-accent/50 rounded-tl-2xl pointer-events-none z-20" />
-        <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-accent/50 rounded-tr-2xl pointer-events-none z-20" />
-        <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-accent/50 rounded-bl-2xl pointer-events-none z-20" />
-        <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-accent/50 rounded-br-2xl pointer-events-none z-20" />
+        <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-[#592C66]/40 rounded-tl-2xl pointer-events-none z-20" />
+        <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-[#592C66]/40 rounded-tr-2xl pointer-events-none z-20" />
+        <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-[#592C66]/40 rounded-bl-2xl pointer-events-none z-20" />
+        <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-[#592C66]/40 rounded-br-2xl pointer-events-none z-20" />
         
         {/* Glowing border effect */}
         <div className="absolute inset-0 rounded-2xl border border-white/10 pointer-events-none z-10" />
@@ -79,7 +79,7 @@ const VideoShowcase = () => {
             {/* Ambient glow effect */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
               style={{
-                background: 'radial-gradient(circle at center, hsl(var(--primary) / 0.15) 0%, transparent 70%)',
+                background: 'radial-gradient(circle at center, rgba(89,44,102,0.15) 0%, transparent 70%)',
               }}
             />
             
@@ -102,7 +102,7 @@ const VideoShowcase = () => {
                 <motion.div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'linear-gradient(135deg, hsl(var(--accent)), hsl(var(--secondary)))',
+                    background: 'linear-gradient(135deg, rgba(89,44,102,0.9), rgba(216,168,151,0.9))',
                   }}
                   animate={{ 
                     scale: [1, 1.3, 1],
@@ -115,14 +115,14 @@ const VideoShowcase = () => {
                 <motion.div
                   className="relative w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center backdrop-blur-sm"
                   style={{
-                    background: 'linear-gradient(135deg, hsl(var(--accent) / 0.9), hsl(var(--secondary) / 0.9))',
-                    boxShadow: '0 0 50px hsl(var(--accent) / 0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
+                    background: 'linear-gradient(135deg, rgba(89,44,102,0.9), rgba(216,168,151,0.9))',
+                    boxShadow: '0 0 50px rgba(89,44,102,0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
                   }}
                   animate={{ 
                     boxShadow: [
-                      '0 0 50px hsl(var(--accent) / 0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
-                      '0 0 70px hsl(var(--accent) / 0.6), inset 0 1px 0 rgba(255,255,255,0.2)',
-                      '0 0 50px hsl(var(--accent) / 0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
+                      '0 0 50px rgba(89,44,102,0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
+                      '0 0 70px rgba(89,44,102,0.6), inset 0 1px 0 rgba(255,255,255,0.2)',
+                      '0 0 50px rgba(89,44,102,0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
                     ]
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -177,15 +177,15 @@ const VideoShowcase = () => {
         
         {/* Right: Highlights Card */}
         <motion.div 
-          className="p-6 md:p-8 rounded-xl border border-accent/20"
+          className="p-6 md:p-8 rounded-xl border border-[#592C66]/20"
           style={{
-            background: 'linear-gradient(135deg, hsl(var(--muted) / 0.5), hsl(var(--background) / 0.8))',
+            background: 'linear-gradient(135deg, rgba(20,15,10,0.22), rgba(16,10,18,0.9))',
           }}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <h4 className="text-xl font-display font-medium text-primary mb-4">
+          <h4 className="text-xl font-display font-medium text-[#592C66] mb-4">
             What You'll See
           </h4>
           <ul className="space-y-3">
@@ -197,10 +197,10 @@ const VideoShowcase = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + i * 0.1 }}
               >
-                <div className="w-8 h-8 rounded-full bg-secondary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <item.icon className="w-4 h-4 text-secondary" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: 'rgba(89,44,102,0.15)' }}>
+                  <item.icon className="w-4 h-4 text-[#592C66]" />
                 </div>
-                <span className="text-foreground/70">{item.text}</span>
+                <span className="text-white/75">{item.text}</span>
               </motion.li>
             ))}
           </ul>

@@ -60,10 +60,10 @@ const WelcomeSection = () => {
       transition={{ duration: 0.8, type: "spring" }}
     >
       {/* Decorative top accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#D8A897] to-transparent" />
       
       {/* Subtle glow */}
-      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-20 blur-3xl bg-accent" />
+      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-20 blur-3xl bg-[#D8A897]" />
       
       {/* Credentials Bar */}
       <motion.div 
@@ -120,7 +120,7 @@ const WelcomeSection = () => {
               delay={0.5 + index * 0.1}
             />
             <div>
-              <h3 className="font-medium text-white text-lg group-hover:text-primary transition-colors">
+              <h3 className="font-medium text-white text-lg group-hover:text-[#D8A897] transition-colors">
                 {feature.isText ? (
                   feature.title
                 ) : (

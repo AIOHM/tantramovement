@@ -49,19 +49,19 @@ const EnhancedTeacherSection: React.FC = () => {
             <div 
               className="absolute -inset-4 rounded-3xl opacity-60"
               style={{
-                background: 'linear-gradient(135deg, hsl(var(--accent) / 0.3), hsl(var(--secondary) / 0.2), hsl(var(--primary) / 0.1))',
+                background: 'linear-gradient(135deg, rgba(89,44,102,0.28), rgba(216,168,151,0.18), rgba(89,44,102,0.12))',
                 filter: 'blur(20px)',
               }}
             />
             
             {/* Decorative frame - border */}
-            <div className="absolute -inset-2 rounded-2xl border border-accent/30" />
+            <div className="absolute -inset-2 rounded-2xl border border-[#592C66]/30" />
             
             {/* Corner accents */}
-            <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-secondary/50 rounded-tl-xl" />
-            <div className="absolute -top-1 -right-1 w-8 h-8 border-t-2 border-r-2 border-secondary/50 rounded-tr-xl" />
-            <div className="absolute -bottom-1 -left-1 w-8 h-8 border-b-2 border-l-2 border-secondary/50 rounded-bl-xl" />
-            <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-secondary/50 rounded-br-xl" />
+            <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-[#592C66]/40 rounded-tl-xl" />
+            <div className="absolute -top-1 -right-1 w-8 h-8 border-t-2 border-r-2 border-[#592C66]/40 rounded-tr-xl" />
+            <div className="absolute -bottom-1 -left-1 w-8 h-8 border-b-2 border-l-2 border-[#592C66]/40 rounded-bl-xl" />
+            <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-[#592C66]/40 rounded-br-xl" />
 
             {/* Main Image */}
             <div className="relative rounded-xl overflow-hidden group">
@@ -69,7 +69,7 @@ const EnhancedTeacherSection: React.FC = () => {
               <motion.div
                 className="absolute inset-0 z-10 pointer-events-none"
                 style={{
-                  background: 'radial-gradient(ellipse at center, hsl(var(--accent) / 0.15) 0%, transparent 60%)',
+                  background: 'radial-gradient(ellipse at center, rgba(89,44,102,0.15) 0%, transparent 60%)',
                 }}
                 animate={{ 
                   opacity: [0.3, 0.6, 0.3],
@@ -110,7 +110,7 @@ const EnhancedTeacherSection: React.FC = () => {
                 }}
                 transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.7 }}
               >
-                <Sparkles size={14} className="text-secondary/60" />
+                <Sparkles size={14} className="text-[#592C66]/60" />
               </motion.div>
             ))}
           </motion.div>
@@ -125,14 +125,14 @@ const EnhancedTeacherSection: React.FC = () => {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#592C66]/10 border border-[#592C66]/20 mb-6"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <Heart className="w-4 h-4 text-secondary" />
-              <span className="text-sm font-display text-secondary">Meet Your Teachers</span>
+              <Heart className="w-4 h-4 text-[#592C66]" />
+              <span className="text-sm font-display text-[#592C66]">Meet Your Teachers</span>
             </motion.div>
 
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-foreground mb-4">
@@ -146,9 +146,9 @@ const EnhancedTeacherSection: React.FC = () => {
 
             {/* Decorative line */}
             <div className="flex items-center justify-center lg:justify-start gap-3">
-              <div className="w-12 h-px bg-gradient-to-r from-secondary/50 to-accent/50" />
-              <Sparkles size={12} className="text-secondary/50" />
-              <div className="w-12 h-px bg-gradient-to-l from-secondary/50 to-accent/50" />
+              <div className="w-12 h-px bg-gradient-to-r from-[#592C66]/50 to-[#D8A897]/50" />
+              <Sparkles size={12} className="text-[#592C66]/50" />
+              <div className="w-12 h-px bg-gradient-to-l from-[#592C66]/50 to-[#D8A897]/50" />
             </div>
           </motion.div>
         </div>
@@ -166,16 +166,16 @@ const EnhancedTeacherSection: React.FC = () => {
             transition={{ duration: 0.6, delay: index * 0.15 }}
           >
             <div
-              className="relative p-6 md:p-8 rounded-2xl border border-accent/20 overflow-hidden group"
+              className="relative p-6 md:p-8 rounded-2xl border border-[#592C66]/20 overflow-hidden group"
               style={{
-                background: 'linear-gradient(135deg, hsl(var(--background) / 0.9), hsl(var(--accent) / 0.05))',
+                background: 'linear-gradient(135deg, rgba(16,10,18,0.9), rgba(89,44,102,0.05))',
               }}
             >
               {/* Decorative Pattern */}
               <div
                 className="absolute top-0 right-0 w-48 h-48 opacity-5 group-hover:opacity-10 transition-opacity duration-500"
                 style={{
-                  background: 'radial-gradient(circle, hsl(var(--secondary)) 1px, transparent 1px)',
+                  background: 'radial-gradient(circle, rgba(89,44,102,0.18) 1px, transparent 1px)',
                   backgroundSize: '12px 12px',
                 }}
               />
@@ -184,19 +184,20 @@ const EnhancedTeacherSection: React.FC = () => {
               <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
                 {/* Avatar/Icon */}
                 <motion.div
-                  className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 flex items-center justify-center border border-accent/30"
+                  className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-[#592C66]/30"
+                  style={{ background: 'linear-gradient(135deg, rgba(89,44,102,0.15), rgba(216,168,151,0.12))' }}
                   whileHover={{ scale: 1.05, rotate: 5 }}
                 >
-                  <Heart size={24} className="text-primary" />
+                  <Heart size={24} className="text-[#592C66]" />
                 </motion.div>
 
                 <div className="flex-1">
-                  <h4 className="text-xl md:text-2xl lg:text-3xl font-display font-medium text-primary mb-1">
+                  <h4 className="text-xl md:text-2xl lg:text-3xl font-display font-medium text-[#592C66] mb-1">
                     {teacher.name}
                   </h4>
                   <div className="flex items-center gap-2">
-                    <Star size={14} className="text-secondary" />
-                    <span className="text-secondary font-display text-sm tracking-wide">
+                    <Star size={14} className="text-[#592C66]" />
+                    <span className="text-[#592C66] font-display text-sm tracking-wide">
                       {teacher.title}
                     </span>
                   </div>
@@ -211,7 +212,7 @@ const EnhancedTeacherSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="hidden md:float-left md:inline text-5xl font-display font-medium text-primary/30 mr-3 mt-1 leading-none">
+                <span className="hidden md:float-left md:inline text-5xl font-display font-medium text-[#592C66]/30 mr-3 mt-1 leading-none">
                   {teacher.bio.charAt(0)}
                 </span>
                 <span className="md:hidden">{teacher.bio}</span>
@@ -221,10 +222,10 @@ const EnhancedTeacherSection: React.FC = () => {
               {/* Quote Section (if available) */}
               {teacher.quote && (
                 <motion.div
-                  className="relative mt-6 p-4 md:p-5 rounded-xl border border-secondary/20"
+                  className="relative mt-6 p-4 md:p-5 rounded-xl border border-[#592C66]/20"
                   style={{
-                    background: 'linear-gradient(135deg, hsl(var(--secondary) / 0.05), hsl(var(--accent) / 0.08))',
-                  }}
+                    background: 'linear-gradient(135deg, rgba(89,44,102,0.05), rgba(216,168,151,0.08))',
+                  }}},{
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -239,7 +240,7 @@ const EnhancedTeacherSection: React.FC = () => {
                     transition={{ delay: 0.5, type: "spring" }}
                   >
                     <div className="bg-background px-2">
-                      <Quote size={20} className="text-secondary" />
+                      <Quote size={20} className="text-[#592C66]" />
                     </div>
                   </motion.div>
 
@@ -249,8 +250,8 @@ const EnhancedTeacherSection: React.FC = () => {
 
                   {/* Attribution */}
                   <div className="mt-4 flex items-center gap-2">
-                    <div className="w-8 h-px bg-secondary/50" />
-                    <span className="text-sm text-secondary font-display">
+                    <div className="w-8 h-px bg-[#592C66]/50" />
+                    <span className="text-sm text-[#592C66] font-display">
                       {teacher.name.split(' ')[0]}
                     </span>
                   </div>
@@ -261,7 +262,7 @@ const EnhancedTeacherSection: React.FC = () => {
               <motion.div
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  boxShadow: 'inset 0 0 40px hsl(var(--accent) / 0.1)',
+                  boxShadow: 'inset 0 0 40px rgba(89,44,102,0.1)',
                 }}
               />
             </div>
@@ -278,14 +279,14 @@ const EnhancedTeacherSection: React.FC = () => {
         transition={{ delay: 0.6 }}
       >
         <div className="flex items-center gap-4">
-          <div className="w-12 md:w-16 h-px bg-gradient-to-r from-transparent to-secondary/50" />
+          <div className="w-12 md:w-16 h-px bg-gradient-to-r from-transparent to-[#592C66]/50" />
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
-            <Sparkles size={14} className="text-secondary" />
+            <Sparkles size={14} className="text-[#592C66]" />
           </motion.div>
-          <div className="w-12 md:w-16 h-px bg-gradient-to-l from-transparent to-secondary/50" />
+          <div className="w-12 md:w-16 h-px bg-gradient-to-l from-transparent to-[#592C66]/50" />
         </div>
       </motion.div>
     </div>

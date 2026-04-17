@@ -23,6 +23,10 @@ import ContactAdmin from "./pages/ContactAdmin";
 import ConsultationAdmin from "./pages/ConsultationAdmin";
 import SettingsAdmin from "./pages/SettingsAdmin";
 import AnalyticsAdmin from "./pages/AnalyticsAdmin";
+import AffiliateLanding from "./affiliate/AffiliateLanding";
+import AffiliateDashboardPage from "./affiliate/AffiliateDashboardPage";
+import PartnerLogin from "./affiliate/PartnerLogin";
+import PartnerSignup from "./affiliate/PartnerSignup";
 import Analytics from "./components/analytics/Analytics";
 
 const queryClient = new QueryClient();
@@ -44,6 +48,10 @@ const App = () => (
           <Route path="/teacher-course" element={<TeacherCourse />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/affiliate" element={<AffiliateLanding />} />
+          <Route path="/affiliate/login" element={<PartnerLogin />} />
+          <Route path="/affiliate/signup" element={<PartnerSignup />} />
+          <Route path="/affiliate/dashboard" element={<AffiliateDashboardPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/admin" element={<AdminLogin />} />

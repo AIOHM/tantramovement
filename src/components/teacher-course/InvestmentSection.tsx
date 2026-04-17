@@ -31,7 +31,7 @@ const InvestmentSection = () => {
             Limited to 12 Participants
           </motion.span>
           <h3 className="text-3xl md:text-4xl font-display font-bold text-[#D8A897] mb-3">
-            Your Investment
+            COST / CONTRIBUTION
           </h3>
           <p className="text-[#D8A897] max-w-xl mx-auto">
             Transform your life and empower others through this sacred journey
@@ -40,59 +40,76 @@ const InvestmentSection = () => {
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
-          {/* Early Bird */}
+          {/* Early Bird Supportive Price */}
           <motion.div
-            className="relative p-6 rounded-xl border-2 border-accent/30 bg-card/50 backdrop-blur-sm"
-            whileHover={{ scale: 1.02, borderColor: 'hsl(var(--accent))' }}
+            className="relative p-6 rounded-xl border-2 bg-[#1B1220]/80 backdrop-blur-sm"
+            style={{ borderColor: 'rgba(89,44,102,0.3)' }}
+            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(89,44,102,0.15)' }}
             transition={{ duration: 0.3 }}
           >
             <div className="absolute -top-3 left-6">
-              <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-display tracking-wider rounded-full">
-                EARLY BIRD
+              <span className="px-3 py-1 bg-[#D8A897]/90 text-[#141414] text-xs font-display tracking-wider rounded-full">
+                Early Bird Supportive Price
               </span>
             </div>
             <div className="pt-4">
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-display font-bold text-primary">€3,500</span>
-                <span className="text-foreground/50 line-through text-lg">€4,200</span>
+              <div className="space-y-3 mb-6">
+                <div>
+                  <span className="block text-sm uppercase tracking-widest text-foreground/70">Per Person</span>
+                  <span className="text-4xl font-display font-bold text-[#592C66]">2900 USD</span>
+                </div>
+                <div>
+                  <span className="block text-sm uppercase tracking-widest text-foreground/70">Per Couple</span>
+                  <span className="text-4xl font-display font-bold text-[#592C66]">4700 USD</span>
+                </div>
               </div>
-              <p className="text-foreground/70 text-sm mb-4">Save €700 when booking before January 15</p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-foreground/80">
-                  <Check className="h-4 w-4 text-accent" />
-                  <span>Full payment or 3-month plan</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm text-foreground/80">
-                  <Check className="h-4 w-4 text-accent" />
-                  <span>Priority room selection</span>
-                </li>
-              </ul>
+              <p className="text-white/70 text-sm">
+                registration 1,5 months before the Course
+              </p>
             </div>
           </motion.div>
 
-          {/* Standard */}
+          {/* Normal Price */}
           <motion.div
-            className="relative p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm"
+            className="relative p-6 rounded-xl border border-white/10 bg-[#1B1220]/70 backdrop-blur-sm"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
+            <div className="absolute -top-3 left-6">
+              <span className="px-3 py-1 bg-[#592C66]/10 text-[#D8A897] text-xs font-display tracking-wider rounded-full">
+                Normal Price
+              </span>
+            </div>
             <div className="pt-4">
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-display font-bold text-foreground">€4,200</span>
+              <div className="space-y-3 mb-6">
+                <div>
+                  <span className="block text-sm uppercase tracking-widest text-foreground/70">Per Person</span>
+                  <span className="text-4xl font-display font-bold text-foreground">3300 USD</span>
+                </div>
+                <div>
+                  <span className="block text-sm uppercase tracking-widest text-foreground/70">Per Couple</span>
+                  <span className="text-4xl font-display font-bold text-foreground">5600 USD</span>
+                </div>
               </div>
-              <p className="text-foreground/70 text-sm mb-4">Standard pricing</p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-foreground/80">
-                  <Check className="h-4 w-4 text-secondary" />
-                  <span>Flexible 6-month payment plan</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm text-foreground/80">
-                  <Check className="h-4 w-4 text-secondary" />
-                  <span>All course materials included</span>
-                </li>
-              </ul>
+              <p className="text-foreground/70 text-sm">
+                Full price for registrations after the Early Bird period
+              </p>
             </div>
           </motion.div>
+        </div>
+
+        {/* Registration Copy */}
+<div className="mb-10 p-6 rounded-xl border border-white/10 bg-[#1B1220]/75 backdrop-blur-sm">
+          <h4 className="text-xl font-display font-semibold text-[#D8A897] mb-4 uppercase tracking-widest">
+            REGISTRATION
+          </h4>
+          <p className="text-white/80 mb-3">
+            Book your spot directly through the booking function on our website or send us an email at <a href="mailto:contact@tantramovement.com" className="text-[#592C66] underline">contact@tantramovement.com</a>.
+            If you have any questions, we’re happy to answer them in advance and even offer a free video call to support you in your decision.
+          </p>
+          <p className="text-white/80">
+            You may also join our shorter ongoing courses before signing up to get to know us better and experience our methods firsthand.
+          </p>
         </div>
 
         {/* What's Included */}
@@ -104,16 +121,16 @@ const InvestmentSection = () => {
             {included.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-3 p-3 rounded-lg bg-background/50"
+                className="flex items-center gap-3 p-3 rounded-lg bg-[#0F0B13]/70"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="p-2 rounded-full bg-primary/10">
-                  <item.icon className="h-4 w-4 text-primary" />
+                <div className="p-2 rounded-full" style={{ backgroundColor: 'rgba(89,44,102,0.12)' }}>
+                  <item.icon className="h-4 w-4 text-[#592C66]" />
                 </div>
-                <span className="text-sm text-foreground/80">{item.text}</span>
+                <span className="text-sm text-white/80">{item.text}</span>
               </motion.div>
             ))}
           </div>

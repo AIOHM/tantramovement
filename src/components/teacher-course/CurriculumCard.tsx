@@ -62,11 +62,11 @@ const CurriculumCard = ({ number, title, image, items, index }: CurriculumCardPr
       <motion.div
         className="absolute top-4 left-4 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center"
         style={{
-          background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8))',
-          boxShadow: '0 4px 20px hsl(var(--primary) / 0.3)',
+          background: 'linear-gradient(135deg, rgba(89,44,102,1), rgba(89,44,102,0.8))',
+          boxShadow: '0 4px 20px rgba(89,44,102,0.3)',
         }}
       >
-        <span className="text-primary-foreground font-display font-bold text-sm md:text-base">
+        <span className="text-white font-display font-bold text-sm md:text-base">
           {number}
         </span>
       </motion.div>
@@ -74,7 +74,7 @@ const CurriculumCard = ({ number, title, image, items, index }: CurriculumCardPr
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6">
         <motion.div
-          className="text-primary-foreground"
+          className="text-white"
           initial={false}
           animate={{ y: isExpanded ? -10 : 0 }}
         >
@@ -83,7 +83,7 @@ const CurriculumCard = ({ number, title, image, items, index }: CurriculumCardPr
           </h3>
           
           {/* Toggle indicator */}
-          <div className="flex items-center gap-2 text-accent text-sm font-display min-h-[44px]">
+          <div className="flex items-center gap-2 text-[#D8A897] text-sm font-display min-h-[44px]">
             {isExpanded ? (
               <>
                 <ChevronUp className="w-4 h-4" />
@@ -124,13 +124,13 @@ const CurriculumCard = ({ number, title, image, items, index }: CurriculumCardPr
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-2.5 text-xs md:text-sm text-primary-foreground/95"
+                    className="flex items-start gap-2.5 text-xs md:text-sm text-white/95"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D8A897] mt-1.5 flex-shrink-0" />
                     <span>
                       <strong className="font-semibold">{item.title}</strong>
                       {item.description && (
-                        <span className="text-primary-foreground/70"> – {item.description}</span>
+                        <span className="text-white/70"> – {item.description}</span>
                       )}
                     </span>
                   </motion.li>

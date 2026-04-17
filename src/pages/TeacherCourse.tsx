@@ -156,7 +156,8 @@ const TeacherCourse = () => {
                 </p>
                 
                 <motion.div 
-                  className="glass-panel-warm p-8 rounded-xl mb-12"
+                  className="p-8 rounded-xl mb-12"
+                  style={{ background: 'linear-gradient(135deg, rgba(89,44,102,0.18), rgba(216,168,151,0.22))', border: '1px solid rgba(255,255,255,0.12)' }}
                   whileHover={{ scale: 1.01 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -171,7 +172,7 @@ const TeacherCourse = () => {
                     ].map((item, i) => (
                       <motion.div 
                         key={i}
-                        className="p-5 rounded-lg border border-accent/20 hover:border-accent/40 transition-colors"
+                        className="p-5 rounded-lg border border-white/15 hover:border-white/25 transition-colors"
                         style={{ background: 'rgba(216,168,151,0.6)' }}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -204,14 +205,15 @@ const TeacherCourse = () => {
                 {/* Content Tab - Curriculum Cards */}
                 {activeTab === 'content' && (
                   <motion.div 
-                    className="glass-panel bg-accent p-6 md:p-8 rounded-xl mb-10"
+                    className="glass-panel p-6 md:p-8 rounded-xl mb-10"
+                    style={{ background: 'rgba(89,44,102,0.14)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    <h3 className="text-2xl md:text-3xl font-display font-medium text-accent-foreground mb-4">
+                    <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-4">
                       Complete Curriculum Overview
                     </h3>
-                    <p className="text-accent-foreground/70 mb-8 text-lg">
+                    <p className="text-white/70 mb-8 text-lg">
                       Our 200-hour Tantra Teacher Course offers a comprehensive exploration of Neo-Tantra traditions and practices. Below you'll find the complete range of topics covered throughout the training, organized by key learning areas.
                     </p>
                     
@@ -233,14 +235,15 @@ const TeacherCourse = () => {
                 {/* Curriculum Tab - Week by Week Timeline */}
                 {activeTab === 'curriculum' && (
                   <motion.div 
-                    className="glass-panel bg-accent p-6 md:p-8 rounded-xl mb-10"
+                    className="glass-panel p-6 md:p-8 rounded-xl mb-10"
+                    style={{ background: 'rgba(89,44,102,0.14)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    <h3 className="text-2xl md:text-3xl font-display font-medium text-accent-foreground mb-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-4 text-center">
                       Your 5-Week Journey
                     </h3>
-                    <p className="text-accent-foreground/70 mb-10 text-center max-w-2xl mx-auto">
+                    <p className="text-white/70 mb-10 text-center max-w-2xl mx-auto">
                       Each week builds upon the last, creating a transformative path from foundations to mastery
                     </p>
                     
@@ -251,14 +254,15 @@ const TeacherCourse = () => {
                 {/* Schedule Tab - Day Arc */}
                 {activeTab === 'schedule' && (
                   <motion.div 
-                    className="glass-panel bg-accent p-6 md:p-8 rounded-xl mb-10"
+                    className="glass-panel p-6 md:p-8 rounded-xl mb-10"
+                    style={{ background: 'rgba(89,44,102,0.14)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    <h3 className="text-2xl md:text-3xl font-display font-medium text-accent-foreground mb-2 text-center">
+                    <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-2 text-center">
                       Daily Schedule
                     </h3>
-                    <p className="text-accent-foreground/70 mb-8 text-center">
+                    <p className="text-white/70 mb-8 text-center">
                       From dawn practice to evening rest, each day is thoughtfully structured
                     </p>
                     
@@ -269,7 +273,8 @@ const TeacherCourse = () => {
                 {/* Teachers Tab - Enhanced */}
                 {activeTab === 'teachers' && (
                   <motion.div 
-                    className="glass-panel bg-accent p-6 md:p-8 rounded-xl mb-10"
+                    className="glass-panel p-6 md:p-8 rounded-xl mb-10"
+                    style={{ background: 'rgba(89,44,102,0.14)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -280,14 +285,15 @@ const TeacherCourse = () => {
                 {/* FAQ Tab - Accordion */}
                 {activeTab === 'faq' && (
                   <motion.div 
-                    className="glass-panel bg-accent p-6 md:p-8 rounded-xl mb-10"
+                    className="glass-panel p-6 md:p-8 rounded-xl mb-10"
+                    style={{ background: 'rgba(89,44,102,0.14)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    <h3 className="text-2xl md:text-3xl font-display font-medium text-accent-foreground mb-2 text-center">
+                    <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-2 text-center">
                       Frequently Asked Questions
                     </h3>
-                    <p className="text-accent-foreground/70 mb-8 text-center">
+                    <p className="text-white/70 mb-8 text-center">
                       Everything you need to know about the training
                     </p>
                     
@@ -310,7 +316,8 @@ const TeacherCourse = () => {
             {/* Inline CTA after curriculum */}
             <AnimatedSection delay={200}>
               <motion.div 
-                className="text-center py-8 px-6 my-12 rounded-xl bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 border border-border/30"
+                className="text-center py-8 px-6 my-12 rounded-xl border border-white/15"
+                style={{ background: 'linear-gradient(90deg, rgba(89,44,102,0.08), rgba(216,168,151,0.08), rgba(89,44,102,0.08))' }}
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -320,7 +327,7 @@ const TeacherCourse = () => {
                 </p>
                 <Link to="/apply">
                   <motion.button
-                    className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-display tracking-wider text-sm uppercase inline-flex items-center gap-2 hover:shadow-ceremony transition-all duration-300"
+                    className="px-8 py-3 bg-[#592C66] text-white rounded-full font-display tracking-wider text-sm uppercase inline-flex items-center gap-2 hover:shadow-ceremony transition-all duration-300"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                   >

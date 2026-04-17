@@ -73,8 +73,8 @@ const PremiumTabs = ({ activeTab, onTabChange }: PremiumTabsProps) => {
                 <motion.div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8))',
-                    boxShadow: '0 4px 20px hsl(var(--primary) / 0.3)',
+                    background: 'linear-gradient(135deg, rgba(89,44,102,1), rgba(89,44,102,0.8))',
+                    boxShadow: '0 4px 20px rgba(89,44,102,0.3)',
                   }}
                   layoutId="activeTab"
                   transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
@@ -86,7 +86,7 @@ const PremiumTabs = ({ activeTab, onTabChange }: PremiumTabsProps) => {
                 <motion.div
                   className="absolute inset-0 rounded-full opacity-30"
                   style={{
-                    background: 'linear-gradient(90deg, transparent, hsl(var(--accent) / 0.5), transparent)',
+                    background: 'linear-gradient(90deg, transparent, rgba(216,168,151,0.5), transparent)',
                   }}
                   animate={{ x: ['-100%', '100%'] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}

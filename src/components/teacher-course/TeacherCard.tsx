@@ -40,8 +40,8 @@ const TeacherCard = ({ name, title, bio, quote, index }: TeacherCardProps) => {
     <motion.div
       className="p-6 rounded-xl relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, hsl(var(--background) / 0.6), hsl(var(--muted) / 0.4))',
-        border: '1px solid hsl(var(--accent) / 0.2)',
+        background: 'linear-gradient(135deg, rgba(20,15,25,0.6), rgba(16,10,18,0.4))',
+        border: '1px solid rgba(89,44,102,0.2)',
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
@@ -53,26 +53,26 @@ const TeacherCard = ({ name, title, bio, quote, index }: TeacherCardProps) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       whileHover={{ 
-        boxShadow: '0 20px 60px -20px hsl(var(--primary) / 0.3)',
+        boxShadow: '0 20px 60px -20px rgba(89,44,102,0.3)',
       }}
     >
       {/* Subtle glow on hover */}
       <motion.div
         className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(89,44,102,0.1) 0%, transparent 70%)',
         }}
       />
       
-      <h4 className="text-xl font-display font-medium text-primary mb-2">{name}</h4>
-      <p className="font-medium text-secondary mb-4">{title}</p>
+      <h4 className="text-xl font-display font-medium text-[#592C66] mb-2">{name}</h4>
+      <p className="font-medium text-[#D8A897] mb-4">{title}</p>
       <p className="text-foreground/70 mb-4 leading-relaxed">{bio}</p>
       
       {quote && (
         <motion.div 
-          className="p-4 rounded-lg border-l-4 border-primary"
+          className="p-4 rounded-lg border-l-4 border-[#592C66]"
           style={{
-            background: 'hsl(var(--primary) / 0.08)',
+            background: 'rgba(89,44,102,0.08)',
           }}
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -85,7 +85,7 @@ const TeacherCard = ({ name, title, bio, quote, index }: TeacherCardProps) => {
             viewport={{ once: true }}
             transition={{ delay: index * 0.2 + 0.4, type: "spring" }}
           >
-            <Quote className="text-primary h-5 w-5 mb-2" />
+            <Quote className="text-[#592C66] h-5 w-5 mb-2" />
           </motion.div>
           <p className="text-foreground/80 italic font-display">{quote}</p>
         </motion.div>

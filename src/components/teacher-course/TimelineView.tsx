@@ -23,7 +23,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
         <motion.div
           className="w-full h-full"
           style={{
-            background: 'linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%)',
+            background: 'linear-gradient(180deg, rgba(89,44,102,1) 0%, rgba(216,168,151,0.8) 50%, rgba(89,44,102,1) 100%)',
           }}
           initial={{ scaleY: 0, originY: 0 }}
           whileInView={{ scaleY: 1 }}
@@ -37,7 +37,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
         <motion.div
           className="w-full h-full"
           style={{
-            background: 'linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%)',
+            background: 'linear-gradient(180deg, rgba(89,44,102,1) 0%, rgba(216,168,151,0.8) 50%, rgba(89,44,102,1) 100%)',
           }}
           initial={{ scaleY: 0, originY: 0 }}
           whileInView={{ scaleY: 1 }}
@@ -77,8 +77,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                     className="absolute inset-0 rounded-full blur-md"
                     style={{
                       background: week.color === 'primary' 
-                        ? 'hsl(var(--primary) / 0.5)' 
-                        : 'hsl(var(--secondary) / 0.5)',
+                        ? 'rgba(89,44,102,0.5)' 
+                        : 'rgba(216,168,151,0.5)',
                     }}
                     animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
                     transition={{ duration: 3, repeat: Infinity, delay: index * 0.2 }}
@@ -87,8 +87,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                   <div
                     className={`w-14 h-14 rounded-full flex items-center justify-center text-lg font-display font-bold relative ${
                       week.color === 'primary' 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'bg-secondary text-secondary-foreground'
+                        ? 'bg-[#592C66] text-white' 
+                        : 'bg-[#D8A897] text-[#141414]'
                     }`}
                   >
                     {week.week}
@@ -109,8 +109,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                     className="absolute inset-0 rounded-full blur-md"
                     style={{
                       background: week.color === 'primary' 
-                        ? 'hsl(var(--primary) / 0.5)' 
-                        : 'hsl(var(--secondary) / 0.5)',
+                        ? 'rgba(89,44,102,0.5)' 
+                        : 'rgba(216,168,151,0.5)',
                     }}
                     animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
                     transition={{ duration: 3, repeat: Infinity, delay: index * 0.2 }}
@@ -118,8 +118,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center text-base font-display font-bold relative ${
                       week.color === 'primary' 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'bg-secondary text-secondary-foreground'
+                        ? 'bg-[#592C66] text-white' 
+                        : 'bg-[#D8A897] text-[#141414]'
                     }`}
                   >
                     {week.week}
@@ -136,11 +136,11 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                 <div
                   className={`relative p-6 rounded-xl border backdrop-blur-sm overflow-hidden group ${
                     week.color === 'primary'
-                      ? 'border-primary/30 hover:border-primary/50'
-                      : 'border-secondary/30 hover:border-secondary/50'
+                      ? 'border-[#592C66]/30 hover:border-[#592C66]/50'
+                      : 'border-[#D8A897]/30 hover:border-[#D8A897]/50'
                   }`}
                   style={{
-                    background: 'linear-gradient(135deg, hsl(var(--background) / 0.8), hsl(var(--card) / 0.6))',
+                    background: 'linear-gradient(135deg, rgba(20,15,25,0.85), rgba(16,10,18,0.62))',
                   }}
                 >
                   {/* Decorative Pattern */}
@@ -148,8 +148,9 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                     className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500"
                     style={{
                       background: `radial-gradient(circle, ${
-                        week.color === 'primary' ? 'hsl(var(--primary))' : 'hsl(var(--secondary))'
+                        week.color === 'primary' ? 'rgba(89,44,102,0.9)' : 'rgba(216,168,151,0.8)'
                       } 1px, transparent 1px)`,
+
                       backgroundSize: '8px 8px',
                     }}
                   />
@@ -159,8 +160,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                     <div
                       className={`p-2 rounded-lg ${
                         week.color === 'primary'
-                          ? 'bg-primary/10 text-primary'
-                          : 'bg-secondary/10 text-secondary'
+                          ? 'bg-[#592C66]/10 text-[#592C66]'
+                          : 'bg-[#D8A897]/10 text-[#141414]'
                       }`}
                     >
                       <Icon size={20} />
@@ -171,7 +172,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                       </p>
                       <h4
                         className={`text-xl font-display font-medium ${
-                          week.color === 'primary' ? 'text-primary' : 'text-secondary'
+                          week.color === 'primary' ? 'text-[#592C66]' : 'text-[#D8A897]'
                         }`}
                       >
                         {week.title}
@@ -191,9 +192,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                         transition={{ delay: index * 0.1 + j * 0.05 + 0.3 }}
                       >
                         <motion.span
-                          className={`mt-2 w-2 h-2 rounded-full flex-shrink-0 ${
-                            week.color === 'primary' ? 'bg-primary' : 'bg-secondary'
-                          }`}
+                          className="mt-2 w-2 h-2 rounded-full flex-shrink-0 bg-[#592C66]"
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
                           viewport={{ once: true }}
@@ -210,8 +209,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
                     style={{
                       background: `radial-gradient(circle at 50% 100%, ${
                         week.color === 'primary'
-                          ? 'hsl(var(--primary) / 0.1)'
-                          : 'hsl(var(--secondary) / 0.1)'
+                          ? 'rgba(89,44,102,0.1)'
+                          : 'rgba(216,168,151,0.1)'
                       } 0%, transparent 70%)`,
                     }}
                   />
@@ -233,12 +232,12 @@ const TimelineView: React.FC<TimelineViewProps> = ({ weeklySchedule }) => {
         viewport={{ once: true }}
         transition={{ delay: 0.8 }}
       >
-        <div className="glass-panel-warm px-6 py-3 rounded-full flex items-center gap-3">
+        <div className="px-6 py-3 rounded-full flex items-center gap-3" style={{ background: 'linear-gradient(135deg, rgba(89,44,102,0.15), rgba(216,168,151,0.08))' }}>
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           >
-            <Sparkles size={18} className="text-secondary" />
+            <Sparkles size={18} className="text-[#592C66]" />
           </motion.div>
           <span className="text-sm font-display text-foreground/80">
             5 Weeks of Transformation

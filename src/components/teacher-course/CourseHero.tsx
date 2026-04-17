@@ -8,8 +8,7 @@ import { Calendar, MapPin } from 'lucide-react';
 const RotatingDate = () => {
   const [currentDate, setCurrentDate] = useState(0);
   const dates = [
-    "2nd March - 5th April 2026",
-    "1st June - 5th July 2026"
+    "23rd June - 24th July 2026"
   ];
 
   useEffect(() => {
@@ -63,8 +62,8 @@ const CourseHero = () => {
       </motion.div>
       
       {/* Multi-layer gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-chocolate/50 via-chocolate/30 to-chocolate/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-burgundy/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#592C66]/60 via-[#592C66]/35 to-[#592C66]/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#592C66]/40 to-transparent" />
       <div className="absolute inset-0 bg-[#592C66]/15" />
       
       {/* Aurora Energy Effect */}
@@ -74,7 +73,7 @@ const CourseHero = () => {
       <motion.div
         className="absolute top-20 left-10 w-32 h-32 rounded-full opacity-20 hidden md:block"
         style={{
-          background: 'radial-gradient(circle, hsl(var(--secondary) / 0.4) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(216,168,151,0.35) 0%, transparent 70%)',
         }}
         animate={{
           y: [0, -20, 0],
@@ -86,7 +85,7 @@ const CourseHero = () => {
       <motion.div
         className="absolute bottom-40 right-20 w-48 h-48 rounded-full opacity-15 hidden md:block"
         style={{
-          background: 'radial-gradient(circle, hsl(var(--accent) / 0.5) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(89,44,102,0.35) 0%, transparent 70%)',
         }}
         animate={{
           y: [0, 15, 0],
@@ -114,7 +113,7 @@ const CourseHero = () => {
                 200-Hour Tantra Teacher Certification
               </KineticText>
             </h2>
-            <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-[#D8A897] mx-auto rounded-full"></div>
           </motion.div>
           
           {/* Main Headline with Kinetic Text */}
@@ -131,13 +130,13 @@ const CourseHero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <div className="flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-lg border border-primary-foreground/20"
-              style={{ background: 'linear-gradient(135deg, hsl(var(--accent) / 0.4), hsl(var(--secondary) / 0.3))' }}
+            <div className="flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-lg border border-white/20"
+              style={{ background: 'linear-gradient(135deg, rgba(89,44,102,0.32), rgba(216,168,151,0.22))' }}
             >
-              <span className="text-primary-foreground/70 line-through text-lg">€4,200</span>
-              <span className="text-3xl font-display font-bold text-primary-foreground">€3,500</span>
-              <span className="px-2 py-0.5 bg-accent/80 text-accent-foreground text-xs font-display rounded-full tracking-wider">
-                EARLY BIRD
+              <span className="text-primary-foreground/70 line-through text-lg">3300 USD</span>
+              <span className="text-3xl font-display font-bold text-primary-foreground">2900 USD</span>
+              <span className="px-2 py-0.5 bg-[#D8A897]/80 text-[#141414] text-xs font-display rounded-full tracking-wider">
+                SUPPORTIVE PRICE
               </span>
             </div>
             <span className="text-primary-foreground/70 text-lg font-display">
@@ -147,9 +146,9 @@ const CourseHero = () => {
           
           {/* Floating Glass-Morphic Date Badge - responsive stacking */}
           <motion.div 
-            className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl sm:rounded-full backdrop-blur-lg border border-primary-foreground/20 shadow-ceremony mb-8"
+            className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl sm:rounded-full backdrop-blur-lg border border-white/20 shadow-ceremony mb-8"
             style={{
-              background: 'linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.2))',
+              background: 'linear-gradient(135deg, rgba(89,44,102,0.22), rgba(216,168,151,0.18))',
             }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ 
@@ -181,11 +180,11 @@ const CourseHero = () => {
           >
             <Link to="/apply">
               <motion.button
-                className="px-10 py-4 bg-accent text-accent-foreground rounded-full font-display tracking-wider text-sm uppercase shadow-glow transition-all duration-300"
-                whileHover={{ scale: 1.05, boxShadow: '0 0 50px hsl(var(--accent) / 0.5)' }}
+                className="px-10 py-4 bg-[#D8A897] text-[#141414] rounded-full font-display tracking-wider text-sm uppercase shadow-glow transition-all duration-300"
+                whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(216,168,151,0.45)' }}
                 whileTap={{ scale: 0.98 }}
               >
-                Apply Now – Save €700
+                Apply Now – Save 400 USD
               </motion.button>
             </Link>
           </motion.div>
@@ -200,12 +199,12 @@ const CourseHero = () => {
         transition={{ delay: 1.5 }}
       >
         <motion.div
-          className="w-6 h-10 rounded-full border-2 border-primary-foreground/40 flex justify-center pt-2"
+          className="w-6 h-10 rounded-full border-2 border-white/40 flex justify-center pt-2"
           animate={{ y: [0, 4, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <motion.div
-            className="w-1.5 h-3 rounded-full bg-accent"
+            className="w-1.5 h-3 rounded-full bg-[#D8A897]"
             animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           />

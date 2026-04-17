@@ -36,19 +36,19 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
             <motion.div
               className={`relative rounded-xl border overflow-hidden transition-all duration-500 ${
                 isOpen 
-                  ? 'border-primary/40 shadow-lg' 
-                  : 'border-accent/20 hover:border-accent/40'
+                  ? 'border-[#592C66]/40 shadow-lg' 
+                  : 'border-white/10 hover:border-[#592C66]/30'
               }`}
               style={{
                 background: isOpen 
-                  ? 'linear-gradient(135deg, hsl(var(--background) / 0.95), hsl(var(--card) / 0.9))'
+                  ? 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(16,10,18,0.9))'
                   : 'hsl(var(--background) / 0.6)',
               }}
               layout
             >
               {/* Active Indicator Line */}
               <motion.div
-                className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-accent"
+                className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#592C66] via-[#D8A897] to-[#592C66]"
                 initial={{ scaleY: 0 }}
                 animate={{ scaleY: isOpen ? 1 : 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
@@ -64,8 +64,8 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
                 <motion.div
                   className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
                     isOpen 
-                      ? 'bg-primary text-primary-foreground' 
-                      : 'bg-accent/20 text-secondary group-hover:bg-accent/30'
+                      ? 'bg-[#592C66] text-white' 
+                      : 'bg-[#592C66]/15 text-[#592C66] group-hover:bg-[#592C66]/25'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -76,7 +76,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
                 {/* Question Text */}
                 <div className="flex-1 pt-0.5 md:pt-1">
                   <h4 className={`text-base md:text-lg font-display font-medium transition-colors duration-300 ${
-                    isOpen ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                    isOpen ? 'text-[#592C66]' : 'text-foreground group-hover:text-[#592C66]'
                   }`}>
                     {item.q}
                   </h4>
@@ -85,7 +85,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
                 {/* Expand Icon - 44px touch target */}
                 <motion.div
                   className={`flex-shrink-0 p-2 md:p-2 rounded-lg transition-colors duration-300 min-w-[36px] min-h-[36px] md:min-w-[40px] md:min-h-[40px] flex items-center justify-center ${
-                    isOpen ? 'bg-primary/10' : 'bg-transparent group-hover:bg-accent/10'
+                    isOpen ? 'bg-[#592C66]/10' : 'bg-transparent group-hover:bg-[#592C66]/10'
                   }`}
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
@@ -93,7 +93,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
                   <ChevronDown 
                     size={18} 
                     className={`transition-colors duration-300 ${
-                      isOpen ? 'text-primary' : 'text-muted-foreground'
+                      isOpen ? 'text-[#592C66]' : 'text-muted-foreground'
                     }`}
                   />
                 </motion.div>
@@ -120,7 +120,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
                       >
-                        <Quote size={24} className="text-secondary/30" />
+                        <Quote size={24} className="text-[#592C66]/30" />
                       </motion.div>
 
                       {/* Answer Text - no drop cap on mobile */}
@@ -131,7 +131,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
                         transition={{ delay: 0.15, duration: 0.4 }}
                       >
                         <p className="text-foreground/70 leading-relaxed text-sm md:text-base">
-                          <span className="hidden md:float-left md:text-4xl md:font-display md:font-medium md:text-primary md:mr-2 md:mt-1 md:leading-none">
+                          <span className="hidden md:float-left md:text-4xl md:font-display md:font-medium md:text-[#592C66] md:mr-2 md:mt-1 md:leading-none">
                             {item.a.charAt(0)}
                           </span>
                           <span className="md:hidden">{item.a}</span>
@@ -141,7 +141,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
 
                       {/* Bottom Fade Line - hidden on mobile */}
                       <motion.div
-                        className="mt-3 md:mt-4 ml-0 md:ml-14 h-px bg-gradient-to-r from-accent/30 via-secondary/20 to-transparent hidden md:block"
+                        className="mt-3 md:mt-4 ml-0 md:ml-14 h-px bg-gradient-to-r from-[#592C66]/30 via-[#D8A897]/20 to-transparent hidden md:block"
                         initial={{ scaleX: 0, originX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ delay: 0.3, duration: 0.5 }}
@@ -157,7 +157,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
               <motion.div
                 className="absolute inset-0 rounded-xl pointer-events-none"
                 style={{
-                  boxShadow: '0 0 30px hsl(var(--primary) / 0.08)',
+                  boxShadow: '0 0 30px rgba(89,44,102,0.08)',
                 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -176,9 +176,9 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({ faqItems }) => {
         viewport={{ once: true }}
         transition={{ delay: 0.6 }}
       >
-        <HelpCircle size={16} className="text-secondary" />
+        <HelpCircle size={16} className="text-[#592C66]" />
         <span className="text-sm">
-          Have more questions? <a href="/contact" className="text-primary hover:underline">Contact us</a>
+          Have more questions? <a href="/contact" className="text-[#592C66] hover:underline">Contact us</a>
         </span>
       </motion.div>
     </div>
