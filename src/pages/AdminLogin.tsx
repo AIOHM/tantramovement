@@ -6,6 +6,7 @@ import Layout from '@/components/layout/Layout';
 import { supabase } from '@/integrations/supabase/client';
 
 const AdminLogin = () => {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const AdminLogin = () => {
     
     try {
       const { data, error } = await supabase.functions.invoke('validate-admin', {
-        body: { password }
+        body: { username, password }
       });
 
       if (error) throw error;
@@ -57,6 +58,21 @@ const AdminLogin = () => {
           </div>
           
           <form onSubmit={handleLogin}>
+            <div className="mb-6">
+              <label htmlFor="username" className="block text-sm font-medium text-chocolate/80 mb-2">
+                Username
+              </label>
+              <input
+                id="username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full px-4 py-2 rounded-md border border-chocolate/20 focus:border-wine-red focus:ring-1 focus:ring-wine-red focus:outline-none"
+                placeholder="WordPress admin username"
+                required
+                disabled={isLoading}
+              />
+            </div>
             <div className="mb-6">
               <label htmlFor="password" className="block text-sm font-medium text-chocolate/80 mb-2">
                 Password

@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ttc_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ttc_tantramovement
+      POSTGRES_USER: ttc_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-change_this_password_in_prod}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - ttc_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: ttc_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - ttc_network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ttc_api
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 4000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ttc_tantramovement
+      DB_USER: ttc_user
+      DB_PASSWORD: ${DB_PASSWORD:-change_this_password_in_prod}
+      REDIS_URL: redis://redis:6379
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:8080}
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - ttc_network
+    command: npm run dev
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  ttc_network:
+    driver: bridge

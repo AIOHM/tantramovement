@@ -26,8 +26,17 @@ const benefits = [
 
 const DiscoveryBenefits = () => {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section
+      className="relative py-20 bg-muted/30 overflow-hidden"
+      style={{
+        backgroundImage: 'url(https://www.tantramovement.com/wp-content/uploads/2023/11/WallpaperDog-5568469-scaled-cover-black-1030x644.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="relative container mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

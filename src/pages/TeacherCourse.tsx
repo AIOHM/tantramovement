@@ -15,7 +15,14 @@ import AccordionFAQ from '@/components/teacher-course/AccordionFAQ';
 import EnhancedTeacherSection from '@/components/teacher-course/EnhancedTeacherSection';
 import TestimonialsSection from '@/components/teacher-course/TestimonialsSection';
 import InvestmentSection from '@/components/teacher-course/InvestmentSection';
-import { ArrowRight } from 'lucide-react';
+import SEO from '@/components/common/SEO';
+import { ArrowRight, CheckCircle2, HeartHandshake, ShieldCheck, Sparkles, Users2, type LucideIcon } from 'lucide-react';
+
+interface AudienceCard {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
 
 const TeacherCourse = () => {
   const [activeTab, setActiveTab] = useState<'content' | 'curriculum' | 'schedule' | 'teachers' | 'faq' | 'documentary'>('content');
@@ -124,8 +131,57 @@ const TeacherCourse = () => {
     { q: 'How do I prepare for the training?', a: "Upon registration, you'll receive preparation materials including readings and practices to help you arrive ready for the immersion. We recommend maintaining a healthy lifestyle, practicing meditation if possible, and coming with an open heart and mind." },
   ];
 
+  const idealFor: AudienceCard[] = [
+    {
+      icon: Users2,
+      title: 'Seekers, healers, and space-holders',
+      description: 'You already work with people, or feel called to, and want a deeper embodied foundation in intimacy, energy, and sacred practice.',
+    },
+    {
+      icon: HeartHandshake,
+      title: 'Those called to guide with integrity',
+      description: 'You feel the pull to share this work, but you want stronger ethics, safety, and confidence before stepping into that role.',
+    },
+    {
+      icon: Sparkles,
+      title: 'People in a real life turning point',
+      description: 'You want a training that transforms your relationship to love, sexuality, and purpose while opening a new path of service.',
+    },
+  ];
+
+  const outcomes = [
+    'A grounded framework for consent, boundaries, trauma-awareness, and safe space-holding.',
+    'Embodied practices in Neo-Tantra, conscious relating, sacred sexuality, ritual, massage, energy work, and meditation.',
+    'A small-group field of feedback, mentorship, and integration so you are genuinely held in the process.',
+    'A clearer path for sharing this work through sessions, workshops, or your existing healing practice.',
+  ];
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Tantra Teacher Course',
+    description: 'A five-week, 200-hour Tantra Teacher Training in Koh Phangan, Thailand focused on Neo-Tantra, sacred sexuality, conscious relationships, energy work, and ethical facilitation.',
+    provider: {
+      '@type': 'Organization',
+      name: 'Tantra Movement School',
+      sameAs: window.location.origin,
+    },
+    image: `${window.location.origin}/lovable-uploads/e0746755-c7e1-4abf-b16b-3725e10dda5a.png`,
+    courseMode: 'onsite',
+    educationalCredentialAwarded: 'Tantra Teacher Certification',
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Tantra Teacher Course | 200-Hour Certification in Thailand"
+        description="Join a five-week 200-hour Tantra Teacher Course in Koh Phangan, Thailand. Study Neo-Tantra, sacred sexuality, conscious relating, energy work, and ethical facilitation."
+        keywords="tantra teacher training, tantra certification, neo-tantra course, tantra thailand, sacred sexuality training, koh phangan retreat"
+        canonical="/teacher-course"
+        image="/lovable-uploads/e0746755-c7e1-4abf-b16b-3725e10dda5a.png"
+        schema={courseSchema}
+      />
+
       {/* Cursor Energy Effect */}
       <CursorEnergy />
       
@@ -133,12 +189,84 @@ const TeacherCourse = () => {
       <CourseHero />
 
       {/* Content Section */}
-      <section className="py-16 md:py-24 bg-[#592C66]">
-        <div className="section-container">
+      <section className="relative overflow-hidden bg-[#592C66]">
+        <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top,rgba(216,168,151,0.24),transparent_65%)]" />
+        <div className="absolute -left-24 top-[30%] h-72 w-72 rounded-full bg-[#D8A897]/10 blur-3xl" />
+        <div className="absolute -right-20 bottom-16 h-80 w-80 rounded-full bg-[#2D1236]/40 blur-3xl" />
+
+        <div className="section-container relative">
           <div className="max-w-4xl mx-auto">
             {/* Premium Welcome Section */}
             <AnimatedSection>
               <WelcomeSection />
+            </AnimatedSection>
+
+            <AnimatedSection delay={120}>
+              <div className="mb-16 grid gap-6 lg:grid-cols-[1.15fr,0.85fr]">
+                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:p-8">
+                  <span className="inline-flex rounded-full bg-[#D8A897]/20 px-4 py-1.5 text-xs font-display uppercase tracking-[0.22em] text-[#F2DDD4]">
+                    Designed For
+                  </span>
+                  <h2 className="mt-5 text-3xl font-display font-bold text-white md:text-4xl">
+                    A transformational training for seekers, healers, lovers, and guides who want depth, safety, and embodiment.
+                  </h2>
+                  <p className="mt-4 max-w-2xl text-white/80">
+                    This is not a surface-level certificate. It is a sacred container for people who want to deepen their relationship with the body, love, truth, and conscious intimacy before sharing this work with others.
+                  </p>
+
+                  <div className="mt-8 grid gap-4 md:grid-cols-3">
+                    {idealFor.map((item) => (
+                      <div
+                        key={item.title}
+                        className="rounded-2xl border border-white/10 bg-[#2f1738]/40 p-5"
+                      >
+                        <div className="mb-4 inline-flex rounded-full bg-[#D8A897]/20 p-2 text-[#F2DDD4]">
+                          <item.icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="text-xl font-display text-white">{item.title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-white/70">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-[2rem] border border-white/10 bg-[#edd1c5]/10 p-6 backdrop-blur-sm md:p-8">
+                  <span className="inline-flex rounded-full bg-white/10 px-4 py-1.5 text-xs font-display uppercase tracking-[0.22em] text-[#F2DDD4]">
+                    You Leave With
+                  </span>
+                  <h3 className="mt-5 text-2xl font-display font-bold text-white md:text-3xl">
+                    Clarity, tools, and a grounded path to guide others.
+                  </h3>
+
+                  <div className="mt-6 space-y-4">
+                    {outcomes.map((item) => (
+                      <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#D8A897]" />
+                        <p className="text-sm leading-relaxed text-white/80">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 border-t border-white/10 pt-6">
+                    <div className="flex items-start gap-3">
+                      <ShieldCheck className="mt-1 h-5 w-5 text-[#D8A897]" />
+                      <div>
+                        <p className="font-display text-xl text-white">Not sure if you are ready yet?</p>
+                        <p className="mt-2 text-sm leading-relaxed text-white/70">
+                          Start with a free discovery call and receive honest guidance before you say yes to the path.
+                        </p>
+                        <Link
+                          to="/apply"
+                          className="mt-4 inline-flex min-h-[48px] items-center gap-2 rounded-full bg-[#D8A897] px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-[#2f1834] shadow-[0_16px_40px_rgba(216,168,151,0.2)] transition-all duration-300 hover:brightness-95"
+                        >
+                          Book Discovery Call
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
             
             {/* Our Approach Section */}
@@ -152,12 +280,12 @@ const TeacherCourse = () => {
                   Our Approach to Tantra
                 </h2>
                 <p className="text-white/80 mb-8 text-lg leading-relaxed">
-                  At Tantra Movement, we specialize in Neo-Tantra traditions with a focus on personal and spiritual development. We believe Tantra is about helping individuals reach their highest potential so they can navigate life guided by love – love for themselves, their partners, family, community, humanity, nature, and all of existence.
+                  At Tantra Movement, we specialize in Neo-Tantra with a focus on personal transformation, ethical facilitation, and embodied practice. We believe Tantra is not about performance or spectacle, but about moving from performance to presence, from shame to celebration, and from separation into deeper union with life.
                 </p>
                 
                 <motion.div 
-                  className="p-8 rounded-xl mb-12"
-                  style={{ background: 'linear-gradient(135deg, rgba(89,44,102,0.18), rgba(216,168,151,0.22))', border: '1px solid rgba(255,255,255,0.12)' }}
+                  className="mb-12 rounded-[2rem] p-8"
+                  style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(216,168,151,0.14))', border: '1px solid rgba(255,255,255,0.12)' }}
                   whileHover={{ scale: 1.01 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -172,16 +300,16 @@ const TeacherCourse = () => {
                     ].map((item, i) => (
                       <motion.div 
                         key={i}
-                        className="p-5 rounded-lg border border-white/15 hover:border-white/25 transition-colors"
-                        style={{ background: 'rgba(216,168,151,0.6)' }}
+                        className="rounded-2xl border border-white/12 p-5 transition-colors hover:border-white/20"
+                        style={{ background: 'rgba(243,223,214,0.92)' }}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
                         whileHover={{ x: 4 }}
                       >
-                        <h4 className="font-medium text-[#141414] mb-2">{item.title}</h4>
-                        <p className="text-[#4B4B4B]">{item.desc}</p>
+                        <h4 className="mb-2 font-medium text-[#2f1834]">{item.title}</h4>
+                        <p className="text-[#4e3553]">{item.desc}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -190,7 +318,8 @@ const TeacherCourse = () => {
             </AnimatedSection>
             
             {/* Program Details */}
-            <AnimatedSection delay={400}>
+            <AnimatedSection delay={400} className="scroll-mt-32" >
+              <div id="program-details" />
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
                 Program Details
               </h2>
@@ -206,7 +335,7 @@ const TeacherCourse = () => {
                 {activeTab === 'content' && (
                   <motion.div 
                     className="glass-panel p-6 md:p-8 rounded-xl mb-10"
-                    style={{ background: 'rgba(89,44,102,0.14)' }}
+                    style={{ background: 'rgba(255,255,255,0.06)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -236,7 +365,7 @@ const TeacherCourse = () => {
                 {activeTab === 'curriculum' && (
                   <motion.div 
                     className="glass-panel p-6 md:p-8 rounded-xl mb-10"
-                    style={{ background: 'rgba(89,44,102,0.14)' }}
+                    style={{ background: 'rgba(255,255,255,0.06)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -255,7 +384,7 @@ const TeacherCourse = () => {
                 {activeTab === 'schedule' && (
                   <motion.div 
                     className="glass-panel p-6 md:p-8 rounded-xl mb-10"
-                    style={{ background: 'rgba(89,44,102,0.14)' }}
+                    style={{ background: 'rgba(255,255,255,0.06)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -274,7 +403,7 @@ const TeacherCourse = () => {
                 {activeTab === 'teachers' && (
                   <motion.div 
                     className="glass-panel p-6 md:p-8 rounded-xl mb-10"
-                    style={{ background: 'rgba(89,44,102,0.14)' }}
+                    style={{ background: 'rgba(255,255,255,0.06)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -286,7 +415,7 @@ const TeacherCourse = () => {
                 {activeTab === 'faq' && (
                   <motion.div 
                     className="glass-panel p-6 md:p-8 rounded-xl mb-10"
-                    style={{ background: 'rgba(89,44,102,0.14)' }}
+                    style={{ background: 'rgba(255,255,255,0.06)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
@@ -316,22 +445,28 @@ const TeacherCourse = () => {
             {/* Inline CTA after curriculum */}
             <AnimatedSection delay={200}>
               <motion.div 
-                className="text-center py-8 px-6 my-12 rounded-xl border border-white/15"
-                style={{ background: 'linear-gradient(90deg, rgba(89,44,102,0.08), rgba(216,168,151,0.08), rgba(89,44,102,0.08))' }}
+                className="my-12 rounded-[2rem] border border-white/10 px-6 py-8 text-center"
+                style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.06), rgba(216,168,151,0.12), rgba(255,255,255,0.06))' }}
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <p className="text-white/80 mb-4 font-display text-lg">
-                  Ready to begin your transformation?
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#F2DDD4]">
+                  Next Step
+                </p>
+                <p className="text-white mb-3 font-display text-2xl md:text-3xl">
+                  Ready to explore whether this training is the right fit?
+                </p>
+                <p className="mx-auto mb-5 max-w-2xl text-white/70">
+                  Start with a free discovery call. You can ask about the curriculum, practical details, and whether this path matches where you are right now.
                 </p>
                 <Link to="/apply">
                   <motion.button
-                    className="px-8 py-3 bg-[#592C66] text-white rounded-full font-display tracking-wider text-sm uppercase inline-flex items-center gap-2 hover:shadow-ceremony transition-all duration-300"
+                    className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-[#D8A897] px-8 py-3 font-display text-sm uppercase tracking-[0.18em] text-[#2f1834] transition-all duration-300 hover:shadow-ceremony"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Apply Now
+                    Book Free Call
                     <ArrowRight className="h-4 w-4" />
                   </motion.button>
                 </Link>

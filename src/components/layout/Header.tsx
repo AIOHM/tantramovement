@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { trackClickEvent } from '@/services/analytics';
@@ -10,6 +10,7 @@ const Header = () => {
   const location = useLocation();
   const [showBadge, setShowBadge] = useState(false);
   const [badgePos, setBadgePos] = useState({ x: 0, y: 0 });
+  const isApplyPage = location.pathname === '/apply';
   
   // Change header appearance on scroll
   useEffect(() => {
@@ -22,12 +23,26 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handlePrimaryCtaClick = (event: MouseEvent<HTMLElement>) => {
+    trackClickEvent(event, isApplyPage ? 'book_call_button_apply_page' : 'book_call_button');
+
+    if (!isApplyPage) {
+      return;
+    }
+
+    event.preventDefault();
+    document.getElementById('booking-form')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-500 ease-out ${
         isScrolled 
-          ? 'py-2 bg-[#592C66] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border-b border-border/10'
-          : 'py-4 bg-transparent'
+          ? 'py-2 bg-[rgba(72,31,84,0.96)] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.18)] border-b border-white/10'
+          : 'py-3 md:py-4 bg-[rgba(47,20,56,0.28)] backdrop-blur-md border-b border-white/10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +58,7 @@ const Header = () => {
               alt="Tantra Movement"
               className="h-8 md:h-10 transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-white font-cormorant text-2xl md:text-3xl ml-3 tracking-wide strong-text-shadow">
+            <span className="ml-2.5 text-xl leading-tight tracking-[0.02em] text-white strong-text-shadow sm:ml-3 sm:text-2xl md:text-3xl">
               Tantra Movement
             </span>
           </Link>
@@ -51,18 +66,18 @@ const Header = () => {
           {/* Apply Now Button */}
           <div className="hidden md:flex items-center">
             <Link
-              to="/contact"
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              to="/apply"
+              className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 lg:px-6 lg:py-3 lg:text-base ${
                 isScrolled
                   ? 'bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg'
-                  : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20'
+                  : 'border border-white/20 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
               }`}
-              onClick={(e) => trackClickEvent(e, 'apply_now_button')}
+              onClick={handlePrimaryCtaClick}
               onMouseEnter={() => setShowBadge(true)}
               onMouseLeave={() => setShowBadge(false)}
               onMouseMove={(e) => setBadgePos({ x: e.clientX, y: e.clientY })}
             >
-              Apply Now
+              Book Call
             </Link>
           </div>
 
@@ -76,17 +91,17 @@ const Header = () => {
           >
             <span className="flex items-center gap-1">
               <Sparkles className="h-3 w-3" />
-              Only 4 spots left
+              Free discovery call
             </span>
           </motion.div>
           
           {/* Apply Now Button - Mobile */}
           <Link
-            to="/contact"
-            className="md:hidden px-6 py-3 rounded-full font-semibold bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 shadow-lg"
-            onClick={(e) => trackClickEvent(e, 'apply_now_button_mobile')}
+            to="/apply"
+            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-lg transition-all duration-300 hover:bg-accent/90 md:hidden"
+            onClick={handlePrimaryCtaClick}
           >
-            Apply Now
+            Book Call
           </Link>
         </div>
       </div>

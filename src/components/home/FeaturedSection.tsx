@@ -77,9 +77,15 @@ const FeaturedSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-16 md:py-24 bg-white relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(https://www.tantramovement.com/wp-content/uploads/2023/11/WallpaperDog-5568469-scaled-cover-black-1030x644.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-warm-sand/10 to-warm-sand/30 -z-10"></div>
+      <div className="absolute inset-0 bg-black/55 -z-10"></div>
       <div className="absolute top-0 left-0 w-40 h-40 bg-deep-gold/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-wine-red/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
       

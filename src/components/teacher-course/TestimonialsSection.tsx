@@ -36,95 +36,92 @@ const testimonials: Testimonial[] = [
 const TestimonialsSection = () => {
   return (
     <motion.div
-      className="py-16"
+      className="py-4"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      {/* Header */}
-      <div className="text-center mb-12">
-        <motion.span 
-          className="inline-block px-4 py-1.5 rounded-full text-xs font-display tracking-widest uppercase bg-[#D8A897]/20 text-[#D8A897] mb-4"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Graduate Stories
-        </motion.span>
-        <h3 className="text-3xl md:text-4xl font-display font-bold text-[#592C66] mb-3">
-          Transformations That Speak
-        </h3>
-        <p className="text-white/70 max-w-xl mx-auto">
-          Hear from those who have walked this sacred path before you
-        </p>
-      </div>
-
-      {/* Testimonials Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <motion.div
-            key={testimonial.name}
-            className="relative p-6 rounded-xl glass-panel-warm"
-            initial={{ opacity: 0, y: 20 }}
+      <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm md:p-10">
+        <div className="mb-12 text-center">
+          <motion.span 
+            className="mb-4 inline-block rounded-full bg-[#D8A897]/20 px-4 py-1.5 text-xs font-display uppercase tracking-widest text-[#F1DDD4]"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.15 }}
-            whileHover={{ y: -4 }}
           >
-            {/* Quote icon */}
-            <Quote className="absolute top-4 right-4 h-8 w-8 text-[#592C66]/30" />
-            
-            {/* Stars */}
-            <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-[#D8A897] text-[#D8A897]" />
-              ))}
-            </div>
-            
-            {/* Quote */}
-            <p className="text-[#592C66] text-sm leading-relaxed mb-6 italic">
-              "{testimonial.quote}"
-            </p>
-            
-            {/* Author */}
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#592C66]/30">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-medium text-[#592C66]">{testimonial.name}</h4>
-                <p className="text-xs text-[#D8A897]/80">{testimonial.location} • {testimonial.role}</p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+            Graduate Stories
+          </motion.span>
+          <h3 className="mb-3 text-3xl font-display font-bold text-white md:text-4xl">
+            Transformations That Speak
+          </h3>
+          <p className="mx-auto max-w-2xl text-white/75">
+            Real voices from graduates who came for depth, safety, and a training they could actually embody after the final week.
+          </p>
+        </div>
 
-      {/* Stats bar */}
-      <motion.div 
-        className="mt-12 grid grid-cols-3 gap-4 p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/30"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-      >
-        <div className="text-center">
-          <span className="text-3xl font-display font-bold text-[#592C66]">500+</span>
-          <p className="text-sm text-white/60">Graduates</p>
+        <div className="grid gap-6 md:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.name}
+              className="relative rounded-[1.5rem] border border-white/40 bg-[#f2ddd5] p-6 text-left shadow-[0_22px_55px_rgba(29,10,36,0.1)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.15 }}
+              whileHover={{ y: -4 }}
+            >
+              <Quote className="absolute right-5 top-5 h-8 w-8 text-[#7b5367]/30" />
+
+              <div className="mb-4 flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A897] text-[#D8A897]" />
+                ))}
+              </div>
+
+              <p className="mb-6 text-sm leading-relaxed text-[#38213d] italic">
+                "{testimonial.quote}"
+              </p>
+
+              <div className="flex items-center gap-3">
+                <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-[#7b5367]/20">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-medium text-[#38213d]">{testimonial.name}</h4>
+                  <p className="text-xs text-[#765163]">{testimonial.location} • {testimonial.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        <div className="text-center border-x border-border/30">
-          <span className="text-3xl font-display font-bold text-[#D8A897]">14+</span>
-          <p className="text-sm text-white/60">Years Teaching</p>
-        </div>
-        <div className="text-center">
-          <span className="text-3xl font-display font-bold text-white">40+</span>
-          <p className="text-sm text-white/60">Countries</p>
-        </div>
-      </motion.div>
+
+        <motion.div 
+          className="mt-10 grid gap-4 md:grid-cols-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          {[
+            { value: '500+', label: 'Graduates' },
+            { value: '14+', label: 'Years teaching' },
+            { value: '40+', label: 'Countries represented' },
+            { value: '12 max', label: 'Students per cohort' },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-white/10 bg-[#2a1431]/50 p-5 text-center"
+            >
+              <span className="text-3xl font-display font-bold text-[#F2DDD4]">{stat.value}</span>
+              <p className="mt-2 text-sm text-white/70">{stat.label}</p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
