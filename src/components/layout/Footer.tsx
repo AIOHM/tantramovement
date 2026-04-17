@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Facebook, Heart, Settings } from 'lucide-react';
+import { Mail, Phone, Instagram, Facebook, Youtube, Heart, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useSiteSettings } from '@/hooks/use-site-settings';
 
@@ -9,7 +9,7 @@ const MagneticIcon = ({ children, href }: { children: React.ReactNode; href: str
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+      className="w-10 h-10 rounded-full bg-[#D8A897]/20 flex items-center justify-center text-[#592C66] hover:bg-[#D8A897] hover:text-[#12050f] transition-colors"
       whileHover={{ scale: 1.15, rotate: 5 }}
       whileTap={{ scale: 0.95 }}
     >
@@ -30,12 +30,12 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-animate opacity-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(216,168,151,0.16),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(89,44,102,0.18),_transparent_28%)]" />
       
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D8A897]/40 to-transparent" />
       
-      <div className="relative bg-muted/80 backdrop-blur-sm pt-16 pb-8">
+      <div className="relative bg-[#12050f] bg-[linear-gradient(180deg,rgba(89,44,102,0.92),rgba(18,5,15,0.98))] border-t border-[#592C66]/30 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* About Section */}
@@ -45,15 +45,18 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-display text-foreground mb-4">Tantra Movement</h3>
-              <p className="text-muted-foreground mb-6 font-body leading-relaxed">
+              <h3 className="text-2xl font-display text-white mb-4">Tantra Movement</h3>
+              <p className="text-[#D8A897]/80 mb-6 font-body leading-relaxed max-w-md">
                 Awakening love, presence, and energy through the ancient wisdom of Tantra.
               </p>
-              <div className="flex space-x-3">
-                <MagneticIcon href={contactInfo.instagram}>
+              <div className="flex items-center gap-3">
+                <MagneticIcon href="https://www.youtube.com/@TantraMovement">
+                  <Youtube size={18} />
+                </MagneticIcon>
+                <MagneticIcon href="https://www.instagram.com/tantramovementlove/">
                   <Instagram size={18} />
                 </MagneticIcon>
-                <MagneticIcon href={contactInfo.facebook}>
+                <MagneticIcon href="https://www.facebook.com/tantramovement/">
                   <Facebook size={18} />
                 </MagneticIcon>
               </div>
@@ -73,7 +76,6 @@ const Footer = () => {
                   { to: '/tantra', label: 'What is Tantra?' },
                   { to: '/workshops', label: 'Workshops & Retreats' },
                   { to: '/massage', label: 'Tantric Massage' },
-                  { to: '/contact', label: 'Contact Us' },
                 ].map((link) => (
                   <motion.li
                     key={link.to}
@@ -107,24 +109,24 @@ const Footer = () => {
               <h3 className="text-xl font-display text-foreground mb-4">Get in Touch</h3>
               <div className="space-y-4">
                 <motion.a
-                  href={`mailto:${contactInfo.email}`}
-                  className="flex items-center text-muted-foreground hover:text-primary transition-colors group"
+                  href="mailto:contact@tantramovement.com"
+                  className="flex items-center text-[#D8A897]/90 hover:text-white transition-colors group"
                   whileHover={{ x: 4 }}
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-[#D8A897]/15 flex items-center justify-center mr-3 group-hover:bg-[#D8A897]/30 group-hover:text-[#12050f] transition-colors">
                     <Mail size={14} />
                   </div>
-                  {contactInfo.email}
+                  contact@tantramovement.com
                 </motion.a>
                 <motion.a
-                  href={`tel:${contactInfo.phone}`}
-                  className="flex items-center text-muted-foreground hover:text-primary transition-colors group"
+                  href="tel:+66804936849"
+                  className="flex items-center text-[#D8A897]/90 hover:text-white transition-colors group"
                   whileHover={{ x: 4 }}
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-[#D8A897]/15 flex items-center justify-center mr-3 group-hover:bg-[#D8A897]/30 group-hover:text-[#12050f] transition-colors">
                     <Phone size={14} />
                   </div>
-                  {contactInfo.phone}
+                  +66 80 493 6849
                 </motion.a>
               </div>
 
